@@ -1,11 +1,12 @@
 package com.zhangmiao.datastoragedemo.smack;
 
-import org.jivesoftware.smack.packet.RosterPacket.ItemType;
+
+import org.jivesoftware.smack.roster.packet.RosterPacket;
 
 public class AssistantInfo {
      private String name;
      private String user;
-     private ItemType type;
+     private RosterPacket.ItemType type;
      private int size;
      private String status;
      private String from;
@@ -29,10 +30,10 @@ public class AssistantInfo {
 	public void setUser(String user) {
 		this.user = user;
 	}
-	public ItemType getType() {
-		return type;
-	}
-	public void setType(ItemType type) {
+//	public ItemType getType() {
+//		return type;
+//	}
+	public void setType(RosterPacket.ItemType type) {
 		this.type = type;
 	}
 	public int getSize() {

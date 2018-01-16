@@ -10,8 +10,10 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.IBinder;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.zhangmiao.datastoragedemo.R;
+import com.zhangmiao.datastoragedemo.smack.SmackManager;
 
 
 /**
@@ -21,6 +23,7 @@ import com.zhangmiao.datastoragedemo.R;
  * @since 2016-04-12
  */
 public class GrayService extends Service {
+//    private SmackManager smackManager;
 
     private final static String TAG = GrayService.class.getSimpleName();
     /**
@@ -36,8 +39,16 @@ public class GrayService extends Service {
         JobSchedulerManager jobSchedulerManager=JobSchedulerManager.getJobSchedulerInstance(this);
         jobSchedulerManager.startJobScheduler();
         Log.i(TAG, "GrayService->onCreate");
+
+        //建立连接
+        SmackManager.getConnection("shebei_1","shebei_1");
+
+
+        Toast.makeText(this, "Smack登录已执行", Toast.LENGTH_SHORT).show();
+
         super.onCreate();
     }
+
     //创建通知
     public void CreateInform() {
 
@@ -53,6 +64,7 @@ public class GrayService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+
         Log.i(TAG, "GrayService->onStartCommand");
         if (Build.VERSION.SDK_INT < 18) {
             startForeground(GRAY_SERVICE_ID, new Notification());//API < 18 ，此方法能有效隐藏Notification上的图标

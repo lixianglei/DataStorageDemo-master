@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.avos.avoscloud.AVOSCloud;
 import com.zhangmiao.datastoragedemo.sevice.AliveJobService;
 import com.zhangmiao.datastoragedemo.sevice.JobSchedulerManager;
+import com.zhangmiao.datastoragedemo.smack.SmackManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +43,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         JobSchedulerManager jobSchedulerManager=JobSchedulerManager.getJobSchedulerInstance(this);
         jobSchedulerManager.startJobScheduler();
+
+
+//        SmackManager.getConnection("shebei_1","shebei_1");//建立连接
+//        SmackManager.login("shebei_1","shebei_1");//Smack登录
 
 
         Log.v("MainActivity", "onCreate");

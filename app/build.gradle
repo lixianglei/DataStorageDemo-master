@@ -33,8 +33,10 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
     //字符串解析
     compile 'com.google.code.gson:gson:2.7'
-    //    implementation files('libs/smackx-jingle.jar')
-    //    implementation files('libs/smack.jar')
-    implementation files('libs/smack.jar')
-    implementation files('libs/smackx.jar')
+    compile 'org.igniterealtime.smack:smack-android-extensions:4.2.0'
+    compile 'org.igniterealtime.smack:smack-experimental:4.2.0'
+    compile 'org.igniterealtime.smack:smack-tcp:4.2.0'
+
+    //消息传递
+    compile 'org.greenrobot:eventbus:3.0.0'
 }

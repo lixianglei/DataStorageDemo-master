@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 数据库增删改查封装
  * Created by zhangmiao on 2016/12/16.
  */
 public class SQLiteDBManager {
@@ -22,18 +23,6 @@ public class SQLiteDBManager {
     }
 
     public void add(List<Person> persons) {
-        /*
-        db.beginTransaction();//开始事务
-        try {
-            for(Person person:persons){
-                db.execSQL("INSERT INTO person VALUE(null,?,?,?)",
-                        new Object[]{person.name,person.age,person.info});
-            }
-            db.setTransactionSuccessful();//设置事务成功完成
-        }finally {
-            db.endTransaction();//结束事务
-        }
-        */
 
         for (int i = 0; i < persons.size(); i++) {
             ContentValues values = new ContentValues();
